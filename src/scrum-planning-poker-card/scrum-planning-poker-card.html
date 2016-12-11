@@ -1,0 +1,79 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="scrum-planning-poker-card">
+<template>
+    <style>
+      :host {
+        display: block;
+        background-color: orange;
+        text-align: center;
+        font-size: 5rem;
+        color: white;
+        text-decoration:none;  
+      }
+      :host(:hover) {
+        opacity: 0.5;
+        cursor: pointer;
+      }
+        .link {
+            text-decoration: none;
+            color: white;
+        }
+        .image {
+            width: 6rem;
+            height: 6rem;
+        }
+    </style>
+    <h2 id="card">[[number]]</h2>
+    <img id="coffee" class="image" src="images/coffee.png"/>
+    <img id="infinite" class="image" src="images/infinite.png"/>
+    
+    <content></content>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'scrum-planning-poker-card',
+
+      properties: {
+        number: {
+            type: String
+        },
+        infinite: {
+            type: Boolean
+        },
+        coffee: {
+            type:Boolean
+        },
+        answer: {
+            
+        }
+      },
+    created: function() {
+        console.log('El elemento se creó.')
+        console.log(this)
+    },
+    ready: function() {
+        this.$.card.hidden = true
+        this.$.infinite.hidden = true
+        this.$.coffee.hidden = true
+        
+        if (this.number){
+            this.$.card.hidden = false
+        }
+        if (this.infinite){
+            this.$.infinite.hidden = false
+        }
+        if (this.coffee){
+            this.$.coffee.hidden = false
+        }
+        
+    },
+    attached: function() {
+        console.log('El elemento ya está en el documento')        
+    }
+
+    });
+  </script>
+</dom-module>

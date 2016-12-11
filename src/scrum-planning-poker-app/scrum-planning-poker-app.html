@@ -1,0 +1,59 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="/src/scrum-planning-poker-card/scrum-planning-poker-card.html">
+<dom-module id="scrum-planning-poker-app">
+<template>
+    <style>
+      
+    </style>
+      <scrum-planning-poker-card number="0"></scrum-planning-poker-card>
+      <scrum-planning-poker-card number="1/2"></scrum-planning-poker-card>
+      <scrum-planning-poker-card number="1"></scrum-planning-poker-card>
+      <scrum-planning-poker-card number="2"></scrum-planning-poker-card>
+      <scrum-planning-poker-card number="3"></scrum-planning-poker-card>
+      <scrum-planning-poker-card number="5"></scrum-planning-poker-card>
+      <scrum-planning-poker-card number="8"></scrum-planning-poker-card>
+      <scrum-planning-poker-card number="13"></scrum-planning-poker-card>
+      <scrum-planning-poker-card number="21"></scrum-planning-poker-card>
+      <scrum-planning-poker-card number="34"></scrum-planning-poker-card>
+      <scrum-planning-poker-card infinite=true></scrum-planning-poker-card>
+      <scrum-planning-poker-card number="?"></scrum-planning-poker-card>
+      <scrum-planning-poker-card coffee=true></scrum-planning-poker-card>
+    
+    <content></content>
+  </template>
+
+  <script>
+     Polymer({
+
+      is: 'scrum-planning-poker-app',
+
+      properties: {
+        number: {
+            type: String
+        },
+        infinite: {
+            type: Boolean
+        },
+        coffee: {
+            type:Boolean
+        },
+        answer: {
+            
+        }
+      },
+    created: function() {
+        console.log('El elemento se creó.')
+        console.log(this)
+    },
+    ready: function() {
+        console.log('El elemento está accesible.')
+        console.log(this)
+        
+    },
+    attached: function() {
+        console.log('El elemento ya está en el documento')        
+    }
+
+    });
+  </script>
+</dom-module>
