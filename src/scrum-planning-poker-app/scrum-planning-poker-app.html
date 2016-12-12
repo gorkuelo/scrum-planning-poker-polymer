@@ -9,7 +9,18 @@
             justify-content: space-around;
             flex-wrap: wrap;
         }
+        .images-container {
+            display: flex;
+            width: 100%;
+        }
+        .title {
+            text-align: center;
+            width: 100%;
+            color: forestgreen;
+            font-family: fantasy;
+        }
     </style>
+    <h1 class="title">SCRUM PLANNING POKER (POLYMER)</h1>
       <scrum-planning-poker-card number="0"></scrum-planning-poker-card>
       <scrum-planning-poker-card number="1/2"></scrum-planning-poker-card>
       <scrum-planning-poker-card number="1"></scrum-planning-poker-card>
@@ -20,10 +31,9 @@
       <scrum-planning-poker-card number="13"></scrum-planning-poker-card>
       <scrum-planning-poker-card number="21"></scrum-planning-poker-card>
       <scrum-planning-poker-card number="34"></scrum-planning-poker-card>
+      <scrum-planning-poker-card number="?"></scrum-planning-poker-card> 
       <scrum-planning-poker-card infinite=true></scrum-planning-poker-card>
-      <scrum-planning-poker-card number="?"></scrum-planning-poker-card>
       <scrum-planning-poker-card coffee=true></scrum-planning-poker-card>
-    
     <content></content>
   </template>
 
