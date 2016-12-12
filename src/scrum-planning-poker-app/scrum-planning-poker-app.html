@@ -3,7 +3,12 @@
 <dom-module id="scrum-planning-poker-app">
 <template>
     <style>
-      
+        :host {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
     </style>
       <scrum-planning-poker-card number="0"></scrum-planning-poker-card>
       <scrum-planning-poker-card number="1/2"></scrum-planning-poker-card>
