@@ -1,5 +1,7 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-dialog/paper-dialog.html">
 <link rel="import" href="../scrum-planning-poker-card/scrum-planning-poker-card.html">
+
 <dom-module id="scrum-planning-poker-app">
 <template>
     <style>
@@ -8,6 +10,20 @@
             flex-direction: row;
             justify-content: space-around;
             flex-wrap: wrap;
+        }
+        .card{
+            display: block;
+            background-color: orange;
+            text-align: center;
+            font-size: 200%;
+            color: white;
+            text-decoration:none;  
+            width:33%;
+            margin-top: 0.1rem;
+        }
+        .card:hover {
+            opacity: 0.5;
+            cursor: pointer;
         }
         .images-container {
             display: flex;
@@ -19,29 +35,166 @@
             color: forestgreen;
             font-family: fantasy;
         }
+        .number-estimation {
+            font-size: 2000%;
+            text-align: center;
+            color: orange;
+            margin-top: 8rem;
+            margin-bottom: 6rem;
+        }
+        .image {
+            width: auto;
+            height: auto;
+        }
+        .modal-dialog{
+            background-color: azure;
+        }
+        .buttons{
+            color: forestgreen;
+        }
     </style>
+    <span class="" id="result"></span>
     <h1 class="title">SCRUM PLANNING POKER (POLYMER)</h1>
-      <scrum-planning-poker-card number="0"></scrum-planning-poker-card>
-      <scrum-planning-poker-card number="1/2"></scrum-planning-poker-card>
-      <scrum-planning-poker-card number="1"></scrum-planning-poker-card>
-      <scrum-planning-poker-card number="2"></scrum-planning-poker-card>
-      <scrum-planning-poker-card number="3"></scrum-planning-poker-card>
-      <scrum-planning-poker-card number="5"></scrum-planning-poker-card>
-      <scrum-planning-poker-card number="8"></scrum-planning-poker-card>
-      <scrum-planning-poker-card number="13"></scrum-planning-poker-card>
-      <scrum-planning-poker-card number="21"></scrum-planning-poker-card>
-      <scrum-planning-poker-card number="34"></scrum-planning-poker-card>
-      <scrum-planning-poker-card number="?"></scrum-planning-poker-card> 
-      <scrum-planning-poker-card infinite=true></scrum-planning-poker-card>
-      <scrum-planning-poker-card coffee=true></scrum-planning-poker-card>
+      
+    <paper-button class="card" raised onclick="modal0.open()">
+        <p>0</p>
+    </paper-button>
+    <paper-button class="card" raised onclick="modal12.open()">
+        <p>1/2</p>
+    </paper-button>
+    
+    <paper-button class="card" raised onclick="modal1.open()">
+      <p>1</p>
+    </paper-button>
+    
+    <paper-button class="card" raised onclick="modal2.open()">
+      <p>2</p>
+    </paper-button>
+    
+    <paper-button class="card" raised onclick="modal3.open()">
+      <p>3</p>
+    </paper-button>
+    
+    <paper-button class="card" raised onclick="modal5.open()">
+      <p>5</p>
+    </paper-button>
+    
+    <paper-button class="card" raised onclick="modal8.open()">
+      <p>8</p>
+    </paper-button>
+    
+    <paper-button class="card" raised onclick="modal13.open()">
+      <p>13</p>
+    </paper-button>
+    
+    <paper-button class="card" raised onclick="modal21.open()">
+      <p>21</p>
+    </paper-button>
+    
+    <paper-button class="card" raised onclick="modal34.open()">
+      <p>34</p>
+    </paper-button>
+    
+    <paper-button class="card" raised onclick="modalquestion.open()">
+      <p>?</p> 
+    </paper-button>
+    
+    <paper-button class="card" raised onclick="modalinfinite.open()">
+        <img class="image" src="../scrum-planning-poker-card/images/infinite.png"/>
+    </paper-button>
+    
+    <paper-button class="card" raised onclick="modalcoffee.open()">
+      <img class="image" src="../scrum-planning-poker-card/images/coffee.png"/>
+    </paper-button>
+    
     <content></content>
+    <paper-dialog id="modal0" modal class="modal-dialog">
+      <p class="number-estimation">0</p>
+      <div class="buttons">
+        <paper-button dialog-confirm autofocus>Cerrar</paper-button>
+      </div>
+    </paper-dialog>
+    <paper-dialog id="modal12" modal class="modal-dialog">
+      <p class="number-estimation">1/2</p>
+      <div class="buttons">
+        <paper-button dialog-confirm autofocus>Cerrar</paper-button>
+      </div>
+    </paper-dialog>
+    <paper-dialog id="modal1" modal class="modal-dialog">
+      <p class="number-estimation">1</p>
+      <div class="buttons">
+        <paper-button dialog-confirm autofocus>Cerrar</paper-button>
+      </div>
+    </paper-dialog>
+    <paper-dialog id="modal2" modal class="modal-dialog">
+      <p class="number-estimation">2</p>
+      <div class="buttons">
+        <paper-button dialog-confirm autofocus>Cerrar</paper-button>
+      </div>
+    </paper-dialog>
+    <paper-dialog id="modal3" modal class="modal-dialog">
+      <p class="number-estimation">3</p>
+      <div class="buttons">
+        <paper-button dialog-confirm autofocus>Cerrar</paper-button>
+      </div>
+    </paper-dialog>
+    <paper-dialog id="modal5" modal class="modal-dialog">
+      <p class="number-estimation">5</p>
+      <div class="buttons">
+        <paper-button dialog-confirm autofocus>Cerrar</paper-button>
+      </div>
+    </paper-dialog>
+    <paper-dialog id="modal8" modal class="modal-dialog">
+      <p class="number-estimation">8</p>
+      <div class="buttons">
+        <paper-button dialog-confirm autofocus>Cerrar</paper-button>
+      </div>
+    </paper-dialog>
+    <paper-dialog id="modal13" modal class="modal-dialog">
+      <p class="number-estimation">13</p>
+      <div class="buttons">
+        <paper-button dialog-confirm autofocus>Cerrar</paper-button>
+      </div>
+    </paper-dialog>
+    <paper-dialog id="modal21" modal class="modal-dialog">
+      <p class="number-estimation">21</p>
+      <div class="buttons">
+        <paper-button dialog-confirm autofocus>Cerrar</paper-button>
+      </div>
+    </paper-dialog>
+    <paper-dialog id="modal34" modal class="modal-dialog">
+      <p class="number-estimation">34</p>
+      <div class="buttons">
+        <paper-button dialog-confirm autofocus>Cerrar</paper-button>
+      </div>
+    </paper-dialog>
+    <paper-dialog id="modalquestion" modal class="modal-dialog">
+      <p class="number-estimation">?</p>
+      <div class="buttons">
+        <paper-button dialog-confirm autofocus>Cerrar</paper-button>
+      </div>
+    </paper-dialog>
+    <paper-dialog id="modalinfinite" modal class="modal-dialog">
+      <img id="infinite" class="image" src="images/infinite.png"/>
+      <div class="buttons">
+        <paper-button dialog-confirm autofocus>Cerrar</paper-button>
+      </div>
+    </paper-dialog>
+    <paper-dialog id="modalcoffee" modal class="modal-dialog">
+      <img id="coffee" class="image" src="images/coffee.png"/>
+      <div class="buttons">
+        <paper-button dialog-confirm autofocus>Cerrar</paper-button>
+      </div>
+    </paper-dialog>
   </template>
 
   <script>
      Polymer({
 
       is: 'scrum-planning-poker-app',
-
+      handleTap: function(event) {
+        event.currentTarget;
+      },
       properties: {
         number: {
             type: String
